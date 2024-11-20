@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <script>
+        // Функции для математических операций
+        function add(a, b) {
+            return a + b;
+        }
+
+        function subtract(a, b) {
+            return a - b;
+        }
+
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        function divide(a, b) {
+            if (b === 0) {
+                return "Ошибка: деление на ноль!";
+            }
+            return a / b;
+        }
+
+        // Основная функция калькулятора
+        function calculator() {
+            const operation = prompt("Выберите операцию: +, -, *, /");
+            const num1 = parseFloat(prompt("Введите первое число:"));
+            const num2 = parseFloat(prompt("Введите второе число:"));
+
+            let result;
+
+            switch (operation) {
+                case "+":
+                    result = add(num1, num2);
+                    break;
+                case "-":
+                    result = subtract(num1, num2);
+                    break;
+                case "*":
+                    result = multiply(num1, num2);
+                    break;
+                case "/":
+                    result = divide(num1, num2);
+                    break;
+                default:
+                    alert("Неверная операция!");
+                    return;
+            }
+
+            alert(`Результат: ${result}`);
+        }
+    </script>
+</head>
+<body>
+    <h1>Простой калькулятор</h1>
+    <button onclick="calculator()">Запустить калькулятор</button>
+</body>
+</html>
